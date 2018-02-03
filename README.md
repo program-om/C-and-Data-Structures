@@ -1,2 +1,2 @@
-# C-and-Data-Structures
+# C++ and Data Structures
 This repository contains small C++ and Data Structures projects.
