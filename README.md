@@ -1,4 +1,4 @@
-# C++ and Data Structures
+# C++ and Data Structures Projects (coming soon)
 This repository contains small C++ and Data Structures projects. Each project will be on a seperate folder.
 
 List of Projects:
