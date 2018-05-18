@@ -4,7 +4,7 @@ This repository contains small C++ and Data Structures projects. Each project wi
 List of Projects:
 - [x] Boggle :white_check_mark:
 - [x] Set Card :white_check_mark:
-- [x] Line Editor
+- [x] Line Editor :white_check_mark:
 - [x] Mine Sweeper :x: `generate error in runtime`
 - [ ] Compete
 - [x] Post-Fix
