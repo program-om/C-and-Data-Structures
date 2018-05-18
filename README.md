@@ -9,5 +9,5 @@ List of Projects:
 - Compete - not done
 - Post-Fix
 - Editor2
-- Huffman
+- Huffman - not done
 - Client-Server using Socket API
