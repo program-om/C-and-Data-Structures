@@ -4,10 +4,10 @@ This repository contains small C++ and Data Structures projects. Each project wi
 List of Projects:
 - Boggle *(available)*
 - Set Card
-- Editor
-- Sweeper
+- Line Editor
+- Mine Sweeper
 - Compete - not done
 - Post-Fix
-- Editor2
+- Line Editor 2
 - Huffman - not done
 - Client-Server using Socket API
