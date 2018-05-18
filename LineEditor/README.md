@@ -3,74 +3,72 @@
 - ./editor <inputFile>
 
 ## Example Run
-`
-\> h
 
-This line editor can do the following commands:
+    > h
 
-    L file load file into this editor 
-    E clear document 
-    I line ­ insert line in front of current line 
-    A line ­ append line to end of document 
-    R line ­ replace current line 
-    D ­ delete the current line 
-    F target ­ makes line containing target current line 
-    S n ­ set current line to nth line 
-    M n ­ move current line n places 
-    C ­ display current line to screen 
-    P ­ display entire document to screen 
-    W file ­ write document to file 
-    H ­ display this list of commands 
-    Q ­ quit the editor (does not save changes)
+    This line editor can do the following commands:
 
-> p line 1 line 2 line 3
+        L file load file into this editor 
+        E clear document 
+        I line ­ insert line in front of current line 
+        A line ­ append line to end of document 
+        R line ­ replace current line 
+        D ­ delete the current line 
+        F target ­ makes line containing target current line 
+        S n ­ set current line to nth line 
+        M n ­ move current line n places 
+        C ­ display current line to screen 
+        P ­ display entire document to screen 
+        W file ­ write document to file 
+        H ­ display this list of commands 
+        Q ­ quit the editor (does not save changes)
 
-> c line 1
+    > p line 1 line 2 line 3
 
-> i first line
+    > c line 1
 
-> c first line
+    > i first line
 
-> p first line line 1 line 2 line 3
+    > c first line
 
-> a last line
+    > p first line line 1 line 2 line 3
 
-> c last line
+    > a last line
 
-> p
+    > c last line
 
-> m ­2
+    > p
 
-> c line 2
+    > m ­2
 
-> r middle line
+    > c line 2
 
-> p first line line 1 middle line line 3 last line
+    > r middle line
 
-> s 0
+    > p first line line 1 middle line line 3 last line
 
-> c first line
+    > s 0
 
-> d
+    > c first line
 
-> c line 1
+    > d
 
-> p line 1 middle line line 3 last line
+    > c line 1
 
-> f mid
+    > p line 1 middle line line 3 last line
 
-> c middle line
+    > f mid
 
-> w sample2.txt
+    > c middle line
 
-> l sampleedit.txt
+    > w sample2.txt
 
-> p line 1 line 2 line 3
+    > l sampleedit.txt
 
-> e
+    > p line 1 line 2 line 3
 
-> p
+    > e
 
-> q 
+    > p
 
-`
+    > q 
