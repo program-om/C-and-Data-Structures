@@ -4,7 +4,7 @@
 
 ## Example Run
 `
-> h
+\> h
 
 This line editor can do the following commands:
 
