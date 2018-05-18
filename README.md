@@ -2,8 +2,8 @@
 This repository contains small C++ and Data Structures projects. Each project will be on a seperate folder.
 
 List of Projects:
-- Boggle *(available)*
-- Set Card
+- [x] Boggle *(available)*
+- [x] Set Card
 - Line Editor
 - Mine Sweeper
 - Compete - not done
