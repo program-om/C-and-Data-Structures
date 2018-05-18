@@ -7,7 +7,7 @@ List of Projects:
 - [x] Line Editor :white_check_mark:
 - [x] Mine Sweeper :x: `generate error in runtime`
 - [ ] Compete
-- [x] Post-Fix
+- [x] Post-Fix :white_check_mark:
 - [x] Line Editor 2
 - [ ] Huffman 
 - Client-Server using Socket API
