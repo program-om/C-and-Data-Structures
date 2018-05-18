@@ -3,14 +3,10 @@
 // This is huffman class operations. This file construce huffman tree
 //
 // ------------------------------------------------------------------------
-// Class: CS 215                         Instructor: Dr. Deborah Hwang
-// Assignment: Project 7                 Date assigned: April 19, 2017
-// Programmer: Abdulaziz Alshabibi       Date completed: April 29, 2017
 
 #include<iostream>
 #include<string> // c++ string
 #include"huffman.h"
-
 
 
 struct TreeNode{
@@ -36,49 +32,50 @@ void HuffmanTree::Load(std::istream &codefile)
   char letter;
   root = new TreeNode;
   TreeNode* localRoot = root;
-  //localRoot->right = new TreeNode;
-  //localRoot->left = new TreeNode;
   
-  // getting the number of letter there're
+  // getting the number of letters
   codefile >> n;
   
-  while(k < n) // while NOT the end of the file
-    {
-      //recieve the letter
-      codefile >> letter;
-      //codefile.ignore();
-      //recieve the code
-      codefile >> code;
+  while(k < n){ // while NOT the end of the file
+    
+    //recieve the letter
+    std::cout << "input" << std::endl;
+    codefile >> letter;
+    //codefile.ignore();
+    //recieve the code
+    codefile >> code;
+    std::cout << letter << " " << code << std::endl;
+    //Iteriate 
+    for(int i=0; i < code.length(); i++){
       
-      //Iteriate 
-      for(int i=0; i < code.length(); i++)
-	{
-	  //std::cout << "I reached here 1" << std::endl;
-	  if(code[i] == '0') // go left
-	    {
-	      // If the node does not exist, then create it and continue
-	      if(localRoot->left == NULL)
-		localRoot->left = new TreeNode;
-	      localRoot = localRoot->left;
-	    }
-	  else if(code[i] == '1') // go right
-	    {
-	      if(localRoot->right == NULL)
-		localRoot->right = new TreeNode;
-	      
-	      localRoot = localRoot->right;
-	      
-	      
-	    }
-	  //if the letter is $ or %
-	  
-	}
-      //std::cout << "I reached here 1" << std::endl;
-      localRoot->letter = letter;
-      
-      k++;
+      if(code[i] == '0'){ // go left
+        
+        // If the node does not exist, then create it and continue
+        if(localRoot->left == NULL){
+          localRoot->left = new TreeNode;
+        }
+        localRoot = localRoot->left; 
+        
+      } else if(code[i] == '1'){ // go right
+        
+        if(localRoot->right == NULL){
+          localRoot->right = new TreeNode;
+        }
+        localRoot = localRoot->right;
+        
+      } else{
+        std::cout << "ERROR: INVALID CODE!" << std::endl;
+        //exit
+      }
+      //localRoot->letter = '*';
+      //if the letter is $ or %
     }
-  std::cout << "i was here" << std::endl;
+    
+    localRoot->letter = letter;//source of the seg fault for n 10
+    
+    k++;
+  }
+  
 }
 
 
