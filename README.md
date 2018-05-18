@@ -6,7 +6,7 @@ List of Projects:
 - Set Card
 - Editor
 - Sweeper
-- Compete
+- Compete - not done
 - Post-Fix
 - Editor2
 - Huffman
