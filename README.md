@@ -6,8 +6,8 @@ List of Projects:
 - [x] Set Card
 - [x] Line Editor
 - [x] Mine Sweeper
-- [] Compete
+- [ ] Compete
 - [x] Post-Fix
 - [x] Line Editor 2
-- [] Huffman 
+- [ ] Huffman 
 - Client-Server using Socket API
