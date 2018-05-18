@@ -23,49 +23,75 @@
         H ­ display this list of commands 
         Q ­ quit the editor (does not save changes)
 
-    > p line 1 line 2 line 3
+    > p 
+    line 1 
+    line 2 
+    line 3
 
-    > c line 1
+    > c 
+    line 1
 
     > i first line
 
-    > c first line
+    > c 
+    first line
 
-    > p first line line 1 line 2 line 3
+    > p 
+    first line 
+    line 1 
+    line 2 
+    line 3
 
     > a last line
 
-    > c last line
+    > c 
+    last line
 
     > p
 
     > m ­2
 
-    > c line 2
+    > c 
+    line 2
 
     > r middle line
 
-    > p first line line 1 middle line line 3 last line
+    > p 
+    first line 
+    line 1 
+    middle line 
+    line 3 
+    last line
 
     > s 0
 
-    > c first line
+    > c 
+    first line
 
     > d
 
-    > c line 1
+    > c 
+    line 1
 
-    > p line 1 middle line line 3 last line
+    > p 
+    line 1 
+    middle line 
+    line 3 
+    last line
 
     > f mid
 
-    > c middle line
+    > c 
+    middle line
 
     > w sample2.txt
 
     > l sampleedit.txt
 
-    > p line 1 line 2 line 3
+    > p 
+    line 1 
+    line 2 
+    line 3
 
     > e
 
