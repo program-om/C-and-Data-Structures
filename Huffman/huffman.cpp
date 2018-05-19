@@ -13,6 +13,7 @@ struct TreeNode{
   char letter;
   TreeNode* left;   // when new node is created, by the default left and right pointers will
   TreeNode* right;  // point to NULL
+  TreeNode(){letter = '*'; left = NULL; right = NULL;}
 };
 
 void CopyTree(TreeNode* &copyRoot, TreeNode* localRoot); //non-member function
@@ -39,7 +40,6 @@ void HuffmanTree::Load(std::istream &codefile)
   while(k < n){ // while NOT the end of the file
     
     //recieve the letter
-    std::cout << "input" << std::endl;
     codefile >> letter;
     //codefile.ignore();
     //recieve the code
@@ -49,16 +49,18 @@ void HuffmanTree::Load(std::istream &codefile)
     for(int i=0; i < code.length(); i++){
       
       if(code[i] == '0'){ // go left
-        
+        std::cout << "0" << std::endl;
         // If the node does not exist, then create it and continue
         if(localRoot->left == NULL){
+          std::cout << "created left node" << std::endl;
           localRoot->left = new TreeNode;
         }
         localRoot = localRoot->left; 
         
       } else if(code[i] == '1'){ // go right
-        
+        std::cout << "1" << std::endl;
         if(localRoot->right == NULL){
+          std::cout << "created right node" << std::endl;
           localRoot->right = new TreeNode;
         }
         localRoot = localRoot->right;
@@ -72,7 +74,7 @@ void HuffmanTree::Load(std::istream &codefile)
     }
     
     localRoot->letter = letter;//source of the seg fault for n 10
-    
+    localRoot = root;
     k++;
   }
   
