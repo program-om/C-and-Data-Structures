@@ -39,3 +39,7 @@
 	user@deviceUser:~/huffman$ more samplemessage.recovered 
 	sunnyinus 
 	user@deviceUser:~/huffman$
+
+
+## TO DO
+- add the ability to encode the space and new line
