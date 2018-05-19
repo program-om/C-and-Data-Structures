@@ -1,0 +1,5 @@
+    Amount   Dollars  Quarters     Dimes   Pennies
+
+       275         2         3         0         0
+       823         8         0         2         3
+       796         7         3         2         1
