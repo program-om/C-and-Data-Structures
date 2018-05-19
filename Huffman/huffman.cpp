@@ -44,23 +44,18 @@ void HuffmanTree::Load(std::istream &codefile)
     //codefile.ignore();
     //recieve the code
     codefile >> code;
-    std::cout << letter << " " << code << std::endl;
     //Iteriate 
     for(int i=0; i < code.length(); i++){
       
       if(code[i] == '0'){ // go left
-        std::cout << "0" << std::endl;
         // If the node does not exist, then create it and continue
         if(localRoot->left == NULL){
-          std::cout << "created left node" << std::endl;
           localRoot->left = new TreeNode;
         }
         localRoot = localRoot->left; 
         
       } else if(code[i] == '1'){ // go right
-        std::cout << "1" << std::endl;
         if(localRoot->right == NULL){
-          std::cout << "created right node" << std::endl;
           localRoot->right = new TreeNode;
         }
         localRoot = localRoot->right;
@@ -172,9 +167,7 @@ void HuffmanTree::Encode(std::istream &messageFile, std::ostream &out)
     
     while(messageFile.get(ch)){
 	    out << CharToCode(ch, root, "");
-      std::cout << ch << " : " << CharToCode(ch, root, "") << std::endl;
     }
-    std::cout << "2- i was here" << std::endl;
     out << std::endl;
   }
 
@@ -212,10 +205,9 @@ void HuffmanTree::Decode(std::istream &messageFile, std::ostream &out){
   std::string code;
   TreeNode* localRoot = root;
   messageFile >> code;
-  std::cout << code << std::endl;
 
   for(int i=0; i < code.length(); i++){
-    std::cout << code[i] << std::endl;
+    
     if(code[i] == '0'){
       localRoot = localRoot->left;
     } else if(code[i] == '1'){
@@ -225,10 +217,8 @@ void HuffmanTree::Decode(std::istream &messageFile, std::ostream &out){
     }
 
     if(localRoot->right == NULL && localRoot->left == NULL){
-      std::cout << localRoot->letter;
       out << localRoot->letter;
       localRoot = root;
-      std::cout << " added" << std::endl;
     }
   }
 }
