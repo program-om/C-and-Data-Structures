@@ -1,8 +1,7 @@
 ## How to run the program
-`
-$ make
-$ ./coder samplecodefile.txt
-`
+
+	user@deviceUser:~/huffman$ make
+	user@deviceUser:~/huffman$ ./coder samplecodefile.txt
 
 ## Example
 
