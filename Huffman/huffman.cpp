@@ -90,28 +90,27 @@ HuffmanTree::HuffmanTree()
 
 //------------------------------------------------
 // copy constructor
-HuffmanTree::HuffmanTree(const HuffmanTree &source)
-  {
-    CopyTree(root, source.root);
-  }
+HuffmanTree::HuffmanTree(const HuffmanTree &source){
 
-  void CopyTree(TreeNode* &copyRoot, TreeNode* localRoot) //non-member function
-  {
-    //Base Case
-    if(localRoot == NULL)
-      copyRoot = NULL;
-    else
-      {
-	// creating a new node
-	copyRoot = new TreeNode;
-	
-	copyRoot->letter = localRoot->letter;
-	// copying the left sub-tree                  
-	CopyTree(copyRoot->left, localRoot->left);   //            
-	// copying the right sub-tree                        <<  Recursive Cases
-	CopyTree(copyRoot->right, localRoot->right); //
-      }
+    CopyTree(root, source.root);
+}
+
+void CopyTree(TreeNode* &copyRoot, TreeNode* localRoot){ //non-member function
+  
+  //Base Case
+  if(localRoot == NULL)
+    copyRoot = NULL;
+  else{
+    // creating a new node
+    copyRoot = new TreeNode;
+    
+    copyRoot->letter = localRoot->letter;
+    // copying the left sub-tree                  
+    CopyTree(copyRoot->left, localRoot->left);   //            
+    // copying the right sub-tree                        <<  Recursive Cases
+    CopyTree(copyRoot->right, localRoot->right); //
   }
+}
 
 //------------------------------------------------
 // Destructor
@@ -171,68 +170,66 @@ void HuffmanTree::Encode(std::istream &messageFile, std::ostream &out)
   {
     char ch;
     
-    while(messageFile.get(ch))
-      {
-	out << CharToCode(ch, root, "");
-      }
+    while(messageFile.get(ch)){
+	    out << CharToCode(ch, root, "");
+      std::cout << ch << " : " << CharToCode(ch, root, "") << std::endl;
+    }
     std::cout << "2- i was here" << std::endl;
     out << std::endl;
   }
 
 //---------------------------------------------------
-std::string CharToCode(char ch, TreeNode* localRoot, std::string pathSoFar) //non-member function
+std::string CharToCode(char ch, TreeNode* localRoot, std::string pathSoFar){ //non-member function
   // recursive helper function
-  {
-    std::string code; // code for the letter that is being encoded
+  
+  std::string code; // code for the letter that is being encoded
+  // when a leaf node is reached
+  if(localRoot->left == NULL && localRoot->right == NULL){
     
-    // when a leaf node is reached
-    if(localRoot->left == NULL && localRoot->right == NULL)
-      {
-    // if (leaf value = ch)
-    //  - return the path(code)
-      if(localRoot->letter == ch)
-	{
-	code = pathSoFar;
-	return code;
-	}
-    // else      // this is not the correct path
-    //  - return empty string
-      else
-	return code;
-      }
-    else // if this is not the leaf
-         // then continue transvesing
-      {
-	CharToCode(ch, localRoot->left, (pathSoFar+'0'));
-	CharToCode(ch, localRoot->right, (pathSoFar+'1'));
-      }
-
-    //this line added to avoid the console warning
-    return code;
+    if(localRoot->letter == ch){
+      code = pathSoFar;
+      return code;
+    // } else{
+    //   return code;
+    }
+  } else{ // if this is not the leaf
+    // then continue transvesing
+    //inefficient vvvvvvv
+    if(!CharToCode(ch, localRoot->left, (pathSoFar+'0')).empty()){ 
+      code = CharToCode(ch, localRoot->left, (pathSoFar+'0'));
+    }
+    if(!CharToCode(ch, localRoot->right, (pathSoFar+'1')).empty()){
+      code = CharToCode(ch, localRoot->right, (pathSoFar+'1'));
+    }
   }
+
+  //this line added to avoid the console warning
+  return code;
+}
 
 //---------------------------------------------------
-void HuffmanTree::Decode(std::istream &messageFile, std::ostream &out)
-  {
-    std::string code;
-    TreeNode* localRoot = root;
-    messageFile >> code;
+void HuffmanTree::Decode(std::istream &messageFile, std::ostream &out){
+  std::string code;
+  TreeNode* localRoot = root;
+  messageFile >> code;
+  std::cout << code << std::endl;
 
-    for(int i=0; i < code.length(); i++)
-      {
-	if(code[i] == '0')
-	  {
-	    localRoot = localRoot->left;
-	  }
-	else if(code[i] == '1')
-	  {
-	    localRoot = localRoot->right;
-	  }
-	else
-	  std::cout << "Warning: There are some characters which are ignored!" << std::endl;
+  for(int i=0; i < code.length(); i++){
+    std::cout << code[i] << std::endl;
+    if(code[i] == '0'){
+      localRoot = localRoot->left;
+    } else if(code[i] == '1'){
+      localRoot = localRoot->right;
+    } else{
+      std::cout << "Warning: There are some characters which are ignored!" << std::endl;
+    }
 
-	if(localRoot->right == NULL && localRoot->left == NULL)
-	  out << localRoot->letter;
-      }
+    if(localRoot->right == NULL && localRoot->left == NULL){
+      std::cout << localRoot->letter;
+      out << localRoot->letter;
+      localRoot = root;
+      std::cout << " added" << std::endl;
+    }
   }
+}
 
