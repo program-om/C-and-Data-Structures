@@ -13,85 +13,85 @@
 // adjacent bombs
 SweeperCell::SweeperCell ()
 {
-   bomb = false;
-   covered = true;
-   marked = false;
-   rep = '#';          // covered and unmarked
-   numAdjacent = 0;
+    bomb = false;
+    covered = true;
+    marked = false;
+    rep = '#';          // covered and unmarked
+    numAdjacent = 0;
 }  // end default constructor
 
 // Accessors
 bool SweeperCell::HasBomb () const
 {
-   return bomb;
+    return bomb;
 }  // end HasBomb
 
 bool SweeperCell::IsCovered () const
 {
-   return covered;
+    return covered;
 }  // end IsCovered
 
 bool SweeperCell::IsMarked () const
 {
-   return marked;
+    return marked;
 }  // end IsMarked
 
 int SweeperCell::GetNumAdjacent() const
 {
-   return numAdjacent;
+    return numAdjacent;
 }  // end GetNumAdjacent
 
 // Mutators
 void SweeperCell::IncrNumAdjacent()
 {
-   numAdjacent++;
-   if (!bomb && !covered) // no bomb and not covered, so show numAdjacent
-      rep = '0' + numAdjacent;
+    numAdjacent++;
+    if (!bomb && !covered) // no bomb and not covered, so show numAdjacent
+        rep = '0' + numAdjacent;
 }  // end IncrNumAdjacent
 
 void SweeperCell::DecrNumAdjacent()
 {
-   numAdjacent--;
-   if (!bomb && !covered)  // no bomb and not covered, so show numAdjacent
-      rep = '0' + numAdjacent;
+    numAdjacent--;
+    if (!bomb && !covered)  // no bomb and not covered, so show numAdjacent
+        rep = '0' + numAdjacent;
 }  // end DecrNumAdjacent
 
 void SweeperCell::PlaceBomb ()
 {
-   bomb = true;
-   if (!covered)  // not covered, so show bomb
-      rep = '*';
+    bomb = true;
+    if (!covered)  // not covered, so show bomb
+        rep = '*';
 }  // end PlaceBomb
 
 void SweeperCell::RemoveBomb ()
 {
-   bomb = false;
-   if (!covered)  // not covered, so show numAdjacent
-      rep = '0' + numAdjacent;
+    bomb = false;
+    if (!covered)  // not covered, so show numAdjacent
+        rep = '0' + numAdjacent;
 }  // end RemoveBomb
 
 bool SweeperCell::Uncover ()
 {
-   covered = false;
-   if (bomb)  // has a bomb, so show it
-      rep = '*';
-   else       // no bomb, so show numAdjacent
-      rep = '0' + numAdjacent;
-   return (bomb);
+    covered = false;
+    if (bomb)  // has a bomb, so show it
+        rep = '*';
+    else       // no bomb, so show numAdjacent
+        rep = '0' + numAdjacent;
+    return (bomb);
 }  // end Uncover
 
 void SweeperCell::Mark ()
 {
-   marked = true;
-   if (covered)  // covered, so show the mark
-      rep = 'f';
+    marked = true;
+    if (covered)  // covered, so show the mark
+        rep = 'f';
 }  // end Mark
 
 void SweeperCell::Unmark ()
 {
-   marked = false;
-   if (covered)  // covered, so remove the mark
-      rep = '#';
+    marked = false;
+    if (covered)  // covered, so remove the mark
+        rep = '#';
 }  // end Unmark
 
 // Function: operator<<
@@ -99,11 +99,11 @@ void SweeperCell::Unmark ()
 //   # - when covered and unmarked
 //   f - when covered and marked
 //   * - when uncovered containing a bomb
-//   n - when uncovered and no bomb, where n is 
-//       number of adjacent cells (all 8 directions) 
+//   n - when uncovered and no bomb, where n is
+//       number of adjacent cells (all 8 directions)
 //       containing bombs
 std::ostream& operator<< (std::ostream & out, const SweeperCell & aCell)
 {
-   out << aCell.rep;
-   return out;
+    out << aCell.rep;
+    return out;
 }  // end operator<<

@@ -1,0 +1,46 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/azsh/Desktop/sweeper/main.cpp
+iostream
+-
+cstdlib
+-
+stdio.h
+-
+sweepercell.h
+/Users/azsh/Desktop/sweeper/sweepercell.h
+sweepergrid.h
+/Users/azsh/Desktop/sweeper/sweepergrid.h
+
+/Users/azsh/Desktop/sweeper/sweepercell.cpp
+iostream
+-
+sweepercell.h
+/Users/azsh/Desktop/sweeper/sweepercell.h
+
+/Users/azsh/Desktop/sweeper/sweepercell.h
+iostream
+-
+
+/Users/azsh/Desktop/sweeper/sweepergrid.cpp
+iostream
+-
+cstdlib
+-
+ctime
+-
+sweepergrid.h
+/Users/azsh/Desktop/sweeper/sweepergrid.h
+
+/Users/azsh/Desktop/sweeper/sweepergrid.h
+iostream
+-
+sweepercell.h
+/Users/azsh/Desktop/sweeper/sweepercell.h
+

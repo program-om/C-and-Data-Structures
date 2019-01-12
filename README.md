@@ -6,7 +6,7 @@ List of Projects:
 - [x] Boggle :white_check_mark:
 - [x] Set Card :white_check_mark:
 - [x] Line Editor :white_check_mark:
-- [x] Mine Sweeper :x: `generate error in runtime`
+- [x] Mine Sweeper :white_check_mark:
 - [ ] Compete
 - [x] Post-Fix :white_check_mark:
 - [x] Line Editor 2 :white_check_mark:
