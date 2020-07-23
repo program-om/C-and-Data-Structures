@@ -11,6 +11,6 @@ List of Projects:
       ​- generate many errors
 - [x] Post-Fix :white_check_mark:
 - [x] Line Editor 2 :white_check_mark:
-      ​-`re-implementation of Line Editor with circular, doublely linked list with a header node.`
+      -`re-implementation of Line Editor with circular, doublely linked list with a header node.`
 - [x] Huffman :white_check_mark:
 - Client-Server using Socket API
