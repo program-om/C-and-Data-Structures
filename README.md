@@ -8,7 +8,7 @@ List of Projects:
 - [x] Line Editor :white_check_mark:
 - [x] Mine Sweeper :white_check_mark:
 - [ ] Compete
-      ​    generate many errors
+      ​- generate many errors
 - [x] Post-Fix :white_check_mark:
 - [x] Line Editor 2 :white_check_mark:
       ​    `re-implementation of Line Editor with circular, doublely linked list with a header node.`
