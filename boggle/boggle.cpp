@@ -63,7 +63,7 @@ int main(int argc, char *argv[])
 	int word_nums = 0;
 
 	//check the number of input files 
-	 if(argc != 2)
+	 if(argc != 3)
 	{
 	cout << "Usage: " << argc << endl;
 	}
