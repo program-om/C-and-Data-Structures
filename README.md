@@ -2,6 +2,9 @@
 This repository contains small C++ and Data Structures projects. Each project will be on a seperate folder.
 
 List of Projects:
+
+- Mini Projects
+
 - [x] Cipher :white_check_mark:
 - [x] Boggle :white_check_mark:
 - [x] Set Card :white_check_mark:
